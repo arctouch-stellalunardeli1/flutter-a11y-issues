@@ -8,14 +8,32 @@
     name="description"
     content="A catalog of known, recurring Flutter (Dart) accessibility issues gathered from GitHub, developer blogs, and Flutter's own docs, organized by the WCAG POUR principles with suggested solutions."
   />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <header class="site-header">
+    <svg class="header-motif" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+      <circle cx="360" cy="40" r="30" />
+      <circle cx="360" cy="40" r="70" />
+      <circle cx="360" cy="40" r="110" />
+      <circle cx="360" cy="40" r="150" />
+    </svg>
     <div class="header-inner">
-      <span class="eyebrow">Community-sourced catalog</span>
+      <div class="header-top">
+        <span class="eyebrow">Community-sourced catalog</span>
+        <button type="button" id="theme-toggle" aria-pressed="false">
+          <span class="theme-toggle-icon" aria-hidden="true">&#9788;</span>
+          <span class="theme-toggle-label">Dark mode</span>
+        </button>
+      </div>
       <h1>Known Flutter Accessibility Issues</h1>
       <p class="header-desc">
         A catalog of recurring accessibility issues developers have documented across the
@@ -27,10 +45,10 @@
         <a href="README.md">README</a> for methodology and sources.
       </p>
       <ul class="principle-legend">
-        <li><span class="legend-dot perceivable"></span> Perceivable</li>
-        <li><span class="legend-dot operable"></span> Operable</li>
-        <li><span class="legend-dot understandable"></span> Understandable</li>
-        <li><span class="legend-dot robust"></span> Robust</li>
+        <li class="legend-chip legend-perceivable"><span class="legend-dot"></span> Perceivable</li>
+        <li class="legend-chip legend-operable"><span class="legend-dot"></span> Operable</li>
+        <li class="legend-chip legend-understandable"><span class="legend-dot"></span> Understandable</li>
+        <li class="legend-chip legend-robust"><span class="legend-dot"></span> Robust</li>
       </ul>
     </div>
   </header>
@@ -84,6 +102,7 @@
       <p>
         <a href="https://github.com/arctouch-stellalunardeli1/flutter-a11y-issues" target="_blank" rel="noopener noreferrer">View source on GitHub</a>
       </p>
+      <p class="brand-credit">Styled per ArcTouch Deck 2026 v2.0 UI guidelines.</p>
     </div>
   </footer>
 

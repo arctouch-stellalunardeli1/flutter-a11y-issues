@@ -1,6 +1,36 @@
 (function () {
   "use strict";
 
+  const THEME_KEY = "flutter-a11y-theme";
+  const toggle = document.getElementById("theme-toggle");
+  const toggleIcon = toggle.querySelector(".theme-toggle-icon");
+  const toggleLabel = toggle.querySelector(".theme-toggle-label");
+
+  function applyTheme(theme) {
+    if (theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
+    const isDark =
+      theme === "dark" ||
+      (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    toggle.setAttribute("aria-pressed", String(isDark));
+    toggleIcon.textContent = isDark ? "☽" : "☀";
+    toggleLabel.textContent = isDark ? "Light mode" : "Dark mode";
+  }
+
+  toggle.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const currentlyDark = current === "dark" || (!current && prefersDark);
+    const next = currentlyDark ? "light" : "dark";
+    localStorage.setItem(THEME_KEY, next);
+    applyTheme(next);
+  });
+
+  applyTheme(localStorage.getItem(THEME_KEY));
+
   const principles = ["Perceivable", "Operable", "Understandable", "Robust"];
   const grid = document.getElementById("issue-grid");
   const resultCount = document.getElementById("result-count");
