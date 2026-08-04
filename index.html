@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flutter Accessibility Issues — Known Gaps by WCAG Principle</title>
+  <meta
+    name="description"
+    content="A catalog of known, recurring Flutter (Dart) accessibility issues gathered from GitHub, developer blogs, and Flutter's own docs, organized by the WCAG POUR principles with suggested solutions."
+  />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <span class="eyebrow">Community-sourced catalog</span>
+      <h1>Known Flutter Accessibility Issues</h1>
+      <p class="header-desc">
+        A catalog of recurring accessibility issues developers have documented across the
+        <a href="https://github.com/flutter/flutter/issues" target="_blank" rel="noopener noreferrer">Flutter GitHub issue tracker</a>,
+        community write-ups, and Flutter's own docs — organized by the
+        <a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">WCAG</a>
+        <strong>POUR</strong> principles (Perceivable, Operable, Understandable, Robust), each with a suggested
+        Flutter-specific fix or mitigation. See the
+        <a href="README.md">README</a> for methodology and sources.
+      </p>
+      <ul class="principle-legend">
+        <li><span class="legend-dot perceivable"></span> Perceivable</li>
+        <li><span class="legend-dot operable"></span> Operable</li>
+        <li><span class="legend-dot understandable"></span> Understandable</li>
+        <li><span class="legend-dot robust"></span> Robust</li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="filter-group">
+      <label id="principle-filter-label" for="principle-filters">Filter by principle</label>
+      <div class="principle-buttons" id="principle-filters" role="group" aria-label="Filter by WCAG principle">
+        <button type="button" data-principle="All" aria-pressed="true">All</button>
+        <button type="button" data-principle="Perceivable" aria-pressed="false">Perceivable</button>
+        <button type="button" data-principle="Operable" aria-pressed="false">Operable</button>
+        <button type="button" data-principle="Understandable" aria-pressed="false">Understandable</button>
+        <button type="button" data-principle="Robust" aria-pressed="false">Robust</button>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <label for="platform-filter">Filter by platform</label>
+      <select id="platform-filter">
+        <!-- options populated by app.js -->
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="search-input">Search issues</label>
+      <input type="search" id="search-input" placeholder="e.g. TalkBack, focus, contrast…" />
+    </div>
+  </div>
+
+  <p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+
+  <main id="main-content">
+    <div id="issue-grid"></div>
+    <p id="empty-state" hidden>No issues match your current filters.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>
+        This dashboard is a snapshot compiled from public sources — it is not exhaustive and does not replace
+        testing with real assistive technology (TalkBack, VoiceOver, NVDA, JAWS) on your own app.
+      </p>
+      <p>
+        Reference guidelines:
+        <a href="https://www.w3.org/TR/WCAG21/" target="_blank" rel="noopener noreferrer">WCAG 2.1</a> ·
+        <a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">WCAG 2.2</a> ·
+        <a href="https://guia-wcag.com" target="_blank" rel="noopener noreferrer">Guia WCAG</a> ·
+        <a href="https://www.magentaa11y.com" target="_blank" rel="noopener noreferrer">MagentaA11y</a> ·
+        <a href="https://docs.flutter.dev/ui/accessibility-and-internationalization/accessibility" target="_blank" rel="noopener noreferrer">Flutter accessibility docs</a>
+      </p>
+      <p>
+        <a href="https://github.com/arctouch-stellalunardeli1/flutter-a11y-issues" target="_blank" rel="noopener noreferrer">View source on GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
