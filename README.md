@@ -40,13 +40,23 @@ continuously-updated list: some linked issues may have been fixed in newer Flutt
 releases by the time you read this, so always verify against the current Flutter
 changelog and test with real assistive technology before treating any entry as still open.
 
+## Design
+
+The visual style follows ArcTouch's internal 2026 v2.0 UI guidelines (Light/Grey
+content-slide system): Figtree type, brand orange `#FF8300` as the single accent color,
+pill-shaped filter chips, large-radius bordered cards, and flat surfaces with no
+shadows/elevation. Orange is only used as a fill (with black text) or a border/decorative
+accent — never as body or link text at full saturation, since that combination falls
+below the WCAG 1.4.3 contrast minimum. A light/dark toggle mirrors the deck's own
+Light-mode/Dark-mode page pair.
+
 ## Structure
 
 ```
 index.html        Dashboard shell (filters, layout, accessible markup)
-assets/style.css  Styling (light/dark theme aware, visible focus states)
+assets/style.css  Styling (ArcTouch-derived theme, light/dark toggle, visible focus states)
 assets/data.js    The issue dataset (title, description, platforms, WCAG refs, sources, solution)
-assets/app.js     Filtering/search/rendering logic
+assets/app.js     Filtering/search/rendering + theme toggle logic
 ```
 
 ## Running locally

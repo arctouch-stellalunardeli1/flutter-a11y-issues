@@ -233,42 +233,6 @@ select:focus-visible {
   font-weight: 600;
 }
 
-.principle-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
-  padding: 0;
-  list-style: none;
-}
-
-.legend-chip {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.3rem 0.8rem 0.3rem 0.6rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
-}
-
-.legend-dot {
-  width: 0.6rem;
-  height: 0.6rem;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.legend-perceivable { background: var(--perceivable-bg); color: var(--perceivable); }
-.legend-perceivable .legend-dot { background: var(--perceivable); }
-.legend-operable { background: var(--operable-bg); color: var(--operable); }
-.legend-operable .legend-dot { background: var(--operable); }
-.legend-understandable { background: var(--understandable-bg); color: var(--understandable); }
-.legend-understandable .legend-dot { background: var(--understandable); }
-.legend-robust { background: var(--robust-bg); color: var(--robust); }
-.legend-robust .legend-dot { background: var(--robust); }
-
 .toolbar {
   max-width: 72rem;
   margin: 0 auto;
